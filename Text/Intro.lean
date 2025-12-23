@@ -1,5 +1,5 @@
 import VersoManual
-import Content.Meta
+import Text.Meta
 open Verso.Genre Manual
 open Verso.Genre.Manual.InlineLean
 open Verso.Code.External

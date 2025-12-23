@@ -1,22 +1,10 @@
 import VersoManual
-import Content.Meta
+import Text.Meta
 
 -- chapters
-import Content.Intro
-import Content.PropLog
-import Content.Classical
-import Content.PredLog
-import Content.Bool
-import Content.Nat
-import Content.List
-import Content.Trees
--- {include 1 Intro}
--- {include 1 PropLog}
--- {include 1 Classical}
--- {include 1 PredLog}
--- {include 1 Bool}
+import Text.Intro
 
-open Content
+open Text
 --import Content.Meta.Lean
 open Verso.Genre Manual
 open Verso.Genre.Manual.InlineLean
@@ -24,7 +12,7 @@ open Verso.Genre.Manual.InlineLean
 
 set_option pp.rawOnError true
 
-#doc (Manual) "IFR (COMP2065) lecture notes" =>
+#doc (Manual) "LAC (COMP2012) lecture notes" =>
 
 %%%
 authors := ["Thorsten Altenkirch"]
@@ -36,10 +24,3 @@ authors := ["Thorsten Altenkirch"]
 
 ```
 {include 1 Intro}
-{include 1 PropLog}
-{include 1 Classical}
-{include 1 PredLog}
-{include 1 Bool}
-{include 1 Nat}
-{include 1 List}
-{include 1 Trees}
