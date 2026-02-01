@@ -10,8 +10,11 @@ Don't change anything else in this file!
 -/
 
 
-import LACnotes.Lectures.L02prep
-open lang
+--import LACNotes.Lectures.L02
+import Proofs.Lang
+
+open Lang
+open Lang.Examples
 
 open SigmaABC
 
@@ -58,7 +61,7 @@ example : E2 = E2_enum := by sorry
 -- you don't need to prove.
 
 def E3 : Lang SigmaABC
-:= (L1 ⬝ { [] }) ⬝ (L2 ∩ L1)
+:= (L1 ⋅ { [] }) ⋅ (L2 ∩ L1)
 
 def E3_enum : Finset (Word SigmaABC)
 := { [], [a], [b], [a, c], [c, a] } -- replace this
@@ -67,7 +70,7 @@ example : E3 = E3_enum := by sorry
 -- you don't need to prove.
 
 def E4 : Lang SigmaABC
-:= (E2 ⬝ {}) ⬝ E3
+:= (E2 ⋅ {}) ⋅ E3
 def E4_enum : Finset (Word SigmaABC)
 := {} -- replace this
 

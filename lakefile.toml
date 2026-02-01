@@ -1,4 +1,4 @@
-name = "LAC notes"
+name = "LACnotes"
 defaultTargets = ["lacnotes"]
 
 [[require]]
@@ -16,6 +16,9 @@ name = "Text"
 
 [[lean_lib]]
 name = "Proofs" 
+
+[[lean_lib]]
+name = "Lectures" 
 
 [[lean_lib]]
 name = "LACNotes" 
