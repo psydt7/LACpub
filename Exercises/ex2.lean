@@ -33,15 +33,22 @@ abbrev div3 : Lang SigmaBin
 inductive Q_div3 : Type
 -- *Insert* your states here
 -- e.g. | q0 | q1 | ...
+| r0 | r1 | r2
 deriving Fintype, DecidableEq
 open Q_div3
 
 abbrev A_div3 : DFA SigmaBin :=
   -- *Insert* your definition of the automaton here.
-  {   Q := sorry
-      s := sorry
-      F := sorry
-      δ := sorry
+  {   Q := Q_div3
+      s := r0
+      F := {r0}
+      δ := λ
+        | r0, 0 => r0
+        | r0, 1 => r1
+        | r1, 0 => r2
+        | r1, 1 => r0
+        | r2, 0 => r1
+        | r2, 1 => r2
   }
 
 -- You don't have to prove this
@@ -68,15 +75,20 @@ description on Moodle:
 inductive Q3_6_nfa : Type
 -- *Insert* your states here
 -- e.g. | q0 | q1 | ...
+| q0 | q1 | q2
 deriving Fintype, DecidableEq
 open Q3_6_nfa
 
 abbrev A3_6_nfa : NFA SigmaBin :=
   -- *insert* your definition of the automaton here.
-  {   Q := sorry
-      S := sorry
-      F := sorry
-      δ := sorry
+  {   Q := Q3_6_nfa
+      S := {q0}
+      F := {q2}
+      δ := λ
+        | q0, 1 => {q0, q1}
+        | q0, _ => {q0}
+        | q1, 0 => {q2}
+        | _, _ => {}
   }
 
 -- test cases
@@ -92,15 +104,22 @@ this into a DFA recginzing the same language.
 inductive Q3_6_dfa : Type
 -- *Insert* your states here
 -- e.g. | q0 | q1 | ...
+| s0 | s1 | s2
 deriving Fintype, DecidableEq
 open Q3_6_dfa
 
 abbrev A3_6_dfa : DFA SigmaBin :=
   -- *insert* your definition of the automaton here.
-  {   Q := sorry
-      s := sorry
-      F := sorry
-      δ := sorry
+  {   Q := Q3_6_dfa
+      s := s0
+      F := {s2}
+      δ := λ
+        | s0, 0 => s0
+        | s0, 1 => s1
+        | s1, 0 => s2
+        | s1, 1 => s1
+        | s2, 0 => s0
+        | s2, 1 => s1
   }
 
 -- test cases
